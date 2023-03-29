@@ -1,5 +1,6 @@
 ---
-layout: default
+layout: page
+title: Archive
 ---
 
 <section>
@@ -12,7 +13,7 @@ layout: default
     {% else %}  
         <h3>{{ firstpostyear }}</h3>
     {% endif %}
-    
+
     {%for post in site.posts %}
       {% unless post.next %}
         <ul>
@@ -35,5 +36,3 @@ layout: default
 
   {% endif %}
 </section>
-
-[back](./)
