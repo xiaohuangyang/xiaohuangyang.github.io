@@ -159,3 +159,28 @@ __all__ = [
 python setup.py install 
 
 pip install -v -e .
+
+1.训练
+
+```
+python tools/train.py configs/unet/fcn_unet_s5-d16_128x128_40k_blast.py
+```
+
+2.测试
+
+```
+python tools/test.py  configs/unet/fcn_unet_s5-d16_128x128_40k_blast.py checkpoint/unet_blast.pth --show-dir result/blast
+```
+
+3.分析日志
+
+```
+python tools/analyze_logs.py  log.json --keys loss_cls --legend loss_cls 
+```
+
+eg：
+
+```java
+python tools/analyze_logs.py work_dirs/my_coco_config/20220503_165551.log.json --out log_curve.png  --keys loss
+```
+
